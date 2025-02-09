@@ -1,7 +1,7 @@
 import time
-import typer
-import sys
+
 from app import keyboard, llms
+
 
 def main():
     while True:
@@ -10,6 +10,7 @@ def main():
         print(response)
         keyboard.output(response)
         time.sleep(0.1)
+
 
 if __name__ == "__main__":
     main()
