@@ -3,6 +3,7 @@
 .ruff_cache/
 .ropeproject/
 
+*.egg-info/
 *__pycache__/
 
 *.png

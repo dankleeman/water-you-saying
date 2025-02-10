@@ -1,17 +1,35 @@
 [project]
 name = "water-you-saying"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "curtsies>=0.4.2",
     "openai>=1.61.1",
     "pyautogui>=0.9.54",
     "pynput>=1.7.7",
-    "ruff>=0.8.4",
+    "screeninfo>=0.8.1",
     "typer>=0.15.1",
 ]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.8.4",
+    "mypy>=1.15.0",
+]
+
+[tool.setuptools]
+py-modules = ["app"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 40
 
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.

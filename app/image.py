@@ -18,6 +18,7 @@ def take_screenshot(save_filename=None):
     screenshot.save(buffer, format="PNG")
     return buffer
 
+
 def encode_image(buffer):
     image_data = buffer.getvalue()
     base64_string = base64.b64encode(image_data).decode("utf-8")
