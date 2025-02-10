@@ -1,0 +1,3 @@
+Read the chat box if there is one. Only consider messages that start with [ALL] or [CT] or [T] as those are chat messages from players. Igonre messages that start @T or @CT as those are pre-canned emotes. We only want to consider chat messages. Consider what team the current player is on so you can tell if messages are from teammates or enemies.
+
+Then, write a quippy response and return it to me. Be hostile to the opposing team. Just the response, nothing else.
