@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install deps
-        run: pip install uv && apt-get install just
+        run: pip install uv && sudo apt-get install just
       - name: Check out code
         uses: actions/checkout@v2
       - name: Install app
