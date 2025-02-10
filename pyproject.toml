@@ -22,7 +22,7 @@ dev-dependencies = [
 
 [tool.coverage.report]
 show_missing = true
-fail_under = 5
+fail_under = 40
 
 [build-system]
 requires = ["setuptools", "wheel"]
