@@ -1,4 +1,4 @@
-name: Water You Saying CI/CD
+name: CI/CD
 run-name: CI/CD
 on: [push]
 
@@ -6,8 +6,8 @@ jobs:
   check-repo:
     runs-on: ubuntu-latest
     steps:
-      - name: Install uv
-        run: pip install uv
+      - name: Install deps
+        run: pip install uv && apt-get install just
       - name: Check out code
         uses: actions/checkout@v2
       - name: Install app
