@@ -5,7 +5,7 @@ import typer
 
 from app import image, keyboard, llm
 
-PROMPT_DIR_PATH = Path('prompts')
+PROMPT_DIR_PATH = Path('app/prompts')
 
 def get_prompt(prompt_file: str | None = None):
     if prompt_file:

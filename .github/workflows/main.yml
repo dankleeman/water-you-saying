@@ -1,0 +1,18 @@
+name: Water You Saying CI/CD
+run-name: CI/CD
+on: [push]
+
+jobs:
+  check-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install uv
+        run: pip install uv
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Install app
+        run: uv sync
+      - name: Check linting and formatting
+        run: just check
+      - name: Run unit tests
+        run: just test
