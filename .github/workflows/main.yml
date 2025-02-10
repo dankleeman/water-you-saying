@@ -1,18 +1,40 @@
-name: CI/CD
-run-name: CI/CD
-on: [push]
+name: CI
+run-name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   check-repo:
     runs-on: ubuntu-latest
     steps:
-      - name: Install deps
-        run: pip install uv && sudo apt-get install just
       - name: Check out code
         uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Set up Xvfb
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run_xvfb: "true"
+          xvfb_options: "-screen 0 1280x720x24"
+
+      - name: Install deps
+        run: pip install uv && sudo apt-get install just
+
       - name: Install app
         run: uv sync
+
       - name: Check linting and formatting
         run: just check
+
       - name: Run unit tests
+        env:
+          DISPLAY: ":99"
         run: just test
