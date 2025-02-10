@@ -28,7 +28,7 @@ def on_release(key):
     if key in key_combo:
         keys_pressed.discard(key)
 
-    if key == esc_key:
+    if key == esc_key and ctrl_key in keys_pressed:
         sys.exit()
 
 
